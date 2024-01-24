@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encripta textos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="contenedor-principal">
+
+        <header>
+            <h1>Text encript</h1>
+            <p> Only can use lowercase an uppercase</p>
+        </header>
+
+        <main>
+            <section  action="">
+                <textarea class="textArea" name="textareaEncript" id="INPUT_TEXT" placeholder="Insert your text here..."  rows="6"></textarea>
+                <div class="button-wrapper flex">
+                    <button class="form-btn btn" id="BTN_ENCRIPT" onclick="encriptText()">Encript</button>
+                    <button class="form-btn btn" id="BTN_DESENCRIPT" onclick="desencriptText()">Desencript</button>
+                    <button class="form-btn btn" id="BTN_COPY" onclick="copyText()" disabled>Copy</button>
+                </div>
+            </section>
+            <section class="result-wrapper">
+                <p id="OUTPUT_TEXT">Result</p>
+            </section>
+            </section>
+        </main>
+
+        <footer>
+            <p>Made by <a href="https://github.com/soyMoka">Moka</a></p>
+        </footer>
+
+    </div>
+    <script src="scrip.js"></script>
+</body>
+
+</html>
