@@ -2,22 +2,22 @@ var textInput = document.getElementById("INPUT_TEXT");
 let textOutput = document.getElementById('OUTPUT_TEXT');
 
 
-const btnEncript = document.getElementById('BTN_ENCRIPT');
-const btnUnencript = document.getElementById('BTN_DESENCRIPT');
+const btnEncrypt = document.getElementById('BTN_ENCRYPT');
+const btnUnencrypt = document.getElementById('BTN_DECRYPT');
 const btncopy = document.getElementById('BTN_COPY');
 
 
 
-function encriptText(){
+function encryptText(){
     if (textInput.value != '') {
-        textOutput.innerText = encript(textInput.value.toLowerCase())
+        textOutput.innerText = encrypt(textInput.value.toLowerCase())
         btncopy.disabled=false;
     }
 
 }
 
-function desencriptText(){
-    textOutput.innerText = desencript(textInput.value.toLowerCase())
+function decryptText(){
+    textOutput.innerText = decrypt(textInput.value.toLowerCase())
 }
 
 function copyText(){
@@ -33,76 +33,76 @@ La letra "i" es convertida para "imes"3
 La letra "o" es convertida para "ober"3
 La letra "u" es convertida para "ufat" 3
 */
-function encript(text){
-    let encriptedText=''
+function encrypt(text){
+    let encryptedText=''
 
     for (let i = 0; i < text.length; i++) { 
         
         switch (text[i]) {
             case 'a':
-                encriptedText+='ai';
+                encryptedText+='ai';
                 break;
 
             case 'e':
-                encriptedText+='enter';
+                encryptedText+='enter';
                 break;
 
             case 'i':
-                encriptedText+='imes';
+                encryptedText+='imes';
                 break;
 
             case 'o':
-                encriptedText+='ober';
+                encryptedText+='ober';
                 break;
 
             case 'u':
-                encriptedText+='ufat';
+                encryptedText+='ufat';
                 break;
 
             default:
-                encriptedText+=text[i]
+                encryptedText+=text[i]
                 break;
         }
     }
-    return encriptedText
+    return encryptedText
 }
 
-function desencript(text) {
+function decrypt(text) {
     
-    let encriptedText=''
+    let encryptedText=''
 
     for (let i = 0; i < text.length; i++) { 
         
         switch (text[i]) {
             case 'a':
-                encriptedText+=text[i];
+                encryptedText+=text[i];
                 i+=1
                 break;
 
             case 'e':
-                encriptedText+=text[i];
+                encryptedText+=text[i];
                 i+=4
                 break;
 
             case 'i':
-                encriptedText+=text[i];
+                encryptedText+=text[i];
                 i+=3
                 break;
 
             case 'o':
-                encriptedText+=text[i];
+                encryptedText+=text[i];
                 i+=3
                 break;
 
             case 'u':
-                encriptedText+=text[i];
+                encryptedText+=text[i];
                 i+=3
                 break;
 
             default:
-                encriptedText+=text[i]
+                encryptedText+=text[i]
                 break;
         }
     }
-    return encriptedText
+    return encryptedText
 }
