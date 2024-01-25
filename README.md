@@ -1,7 +1,7 @@
 # TextEncript
 Este encriptador de texto es uno de los desafios de ALORA
 
-![Muestra de la aplicacion web.](imagenMuestra-1.jpeg)
+![Muestra de la aplicacion web.](imagenMuestra.jpeg)
 
 ## Uso
 1- Insertar el texto que se desea encriptar o desencriptar en el primer area de texto.
