@@ -12,7 +12,9 @@ function encryptText(){
     if (textInput.value != '') {
         textOutput.innerText = encrypt(textInput.value.toLowerCase())
         btncopy.disabled=false;
-
+        if (!(textInput.value.toLowerCase() === textInput.value)) {
+            alert("Uppercase will be converted to lowercase and special caracters will be ignored")
+        }
         
     }
     else{
@@ -30,6 +32,7 @@ function encryptText(){
     }
 }
 
+
 function decryptText(){
     if (textInput.value != '') {
         textOutput.innerText = decrypt(textInput.value.toLowerCase())
@@ -44,6 +47,9 @@ function decryptText(){
 
         hideOrshowElement(imageOutput)
         hideOrshowElement(textOutput)
+    }
+    if (!(textInput.value.toLowerCase() === textInput.value)) {
+        alert("Uppercase will be converted to lowercase and special caracters will be ignored")
     }
 }
 
