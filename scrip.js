@@ -12,9 +12,8 @@ function encryptText(){
     if (textInput.value != '') {
         textOutput.innerText = encrypt(textInput.value.toLowerCase())
         btncopy.disabled=false;
-        if (!(textInput.value.toLowerCase() === textInput.value)) {
-            alert("Uppercase will be converted to lowercase and special caracters will be ignored")
-        }
+    
+        formatAlert(textInput)
         
     }
     else{
@@ -37,6 +36,8 @@ function decryptText(){
     if (textInput.value != '') {
         textOutput.innerText = decrypt(textInput.value.toLowerCase())
         btncopy.disabled=false;
+        
+        formatAlert(textInput)
     }
     else{
         hideOrshowElement(imageOutput)
@@ -47,9 +48,6 @@ function decryptText(){
 
         hideOrshowElement(imageOutput)
         hideOrshowElement(textOutput)
-    }
-    if (!(textInput.value.toLowerCase() === textInput.value)) {
-        alert("Uppercase will be converted to lowercase and special caracters will be ignored")
     }
 }
 
@@ -196,3 +194,13 @@ function hideOrshowElement(elem){
     }
 }
 
+function containsSpecialChars(str) {
+    const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~ñśdǵñéíóúá]/;
+    return specialChars.test(str);
+  }
+
+  function formatAlert(str){
+    if (!(str.value.toLowerCase() === str.value) || containsSpecialChars(str.value)) {
+        alert("Uppercase will be converted to lowercase and special caracters will be ignored")
+    }
+  }
