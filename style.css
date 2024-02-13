@@ -182,7 +182,6 @@ border: 2px solid var(--accent);
 .result-wrapper p{
     overflow: auto;
     max-width: 400px;
-    height:10rem ;
     font-size: 1rem;
     font-weight: 600;
     color: var(--sub-text-color);
