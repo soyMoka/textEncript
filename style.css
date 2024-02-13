@@ -180,7 +180,9 @@ border: 2px solid var(--accent);
     border: 2px solid var(--text-color);
 }
 .result-wrapper p{
-    width: 100%;
+    overflow: auto;
+    max-width: 400px;
+    height:10rem ;
     font-size: 1rem;
     font-weight: 600;
     color: var(--sub-text-color);
