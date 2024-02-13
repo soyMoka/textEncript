@@ -1,5 +1,6 @@
 var textInput = document.getElementById('INPUT_TEXT');
 let textOutput = document.getElementById('OUTPUT_TEXT');
+let imageOutput = document.getElementById('OUTPUT_IMG');
 const btnEncrypt = document.getElementById('BTN_ENCRYPT');
 const btnUnencrypt = document.getElementById('BTN_DECRYPT');
 const btncopy = document.getElementById('BTN_COPY');
@@ -11,12 +12,39 @@ function encryptText(){
     if (textInput.value != '') {
         textOutput.innerText = encrypt(textInput.value.toLowerCase())
         btncopy.disabled=false;
-    }
 
+        
+    }
+    else{
+
+        if(imageOutput.classList.contains('noShow')){
+
+            hideOrshowElement(imageOutput)
+            hideOrshowElement(textOutput)
+        }
+    }
+    if(textOutput.classList.contains('noShow')&&textInput.value != ''){
+
+        hideOrshowElement(imageOutput)
+        hideOrshowElement(textOutput)
+    }
 }
 
 function decryptText(){
-    textOutput.innerText = decrypt(textInput.value.toLowerCase())
+    if (textInput.value != '') {
+        textOutput.innerText = decrypt(textInput.value.toLowerCase())
+        btncopy.disabled=false;
+    }
+    else{
+        hideOrshowElement(imageOutput)
+        hideOrshowElement(textOutput)    
+    }
+
+    if(textOutput.classList.contains('noShow')&&textInput.value != ''){
+
+        hideOrshowElement(imageOutput)
+        hideOrshowElement(textOutput)
+    }
 }
 
 function copyText(){
@@ -149,3 +177,16 @@ function remplazarCharValueToCharKey(letra) {
         letra
         }
 }
+
+console.log(imageOutput.classList);
+
+function hideOrshowElement(elem){
+    if ( elem.classList.contains('noShow')) {
+        elem.classList.remove('noShow')
+        console.log('debería borrar');
+    }
+    else {
+        elem.classList.add('noShow')
+    }
+}
+

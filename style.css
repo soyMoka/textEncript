@@ -8,6 +8,8 @@
     --text-color: #ddcec3;
     --sub-text-color: #a59991;
     --accent: #ffae00;
+
+    --border-radius-block:20px; 
     
 } 
 
@@ -23,12 +25,16 @@
 /* ##                GENERIC                ## */
 /* ########################################### */
 
+.noShow{
+    display: none;
+}
 
 body{
     background-color:  var( --background-color);
     color: var(--text-color);
     margin: 0 auto;
     width: 100vw;
+
 }
 
 .wrapper{
@@ -46,7 +52,7 @@ body{
 main{
     text-align: center;
     margin: auto;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 }
 
 
@@ -66,13 +72,13 @@ main{
 
 header{
     text-align: center;
-    margin: 2rem auto 4rem auto;
+    margin: 2rem auto 2rem auto;
 }
 header h1 {
     margin: auto;
     padding-bottom: .2rem;
     display: inline-block;
-    font-size: 3rem;
+    font-size: 2.5rem;
     border-bottom: 6px dotted var(--accent);
 }
 
@@ -95,17 +101,20 @@ header p {
 /* ------------------| TEXTAREA |------------------- */
 
 .textArea{
-    
+    margin: 0 auto;
     box-sizing: border-box;
     background-color: var(--background-color);
     border: 2px solid var(--text-color);
-    border-radius: 20px;
+    border-radius: var(--border-radius-block);
     width: 100%;
     max-width: 1024px;
     color: var(--text-color);
     padding: 1rem;
     font-size: 1rem;
+
 }
+
+
 .textArea:focus{
     border: 2px solid var(--accent);
     
@@ -117,7 +126,8 @@ header p {
 
 
 .button-wrapper{
-    margin: auto;
+
+    margin: 1.5rem auto;
     max-width: 800px;
     justify-content: space-evenly;
 
@@ -125,12 +135,12 @@ header p {
 }
 
 .btn {
-    margin-top: 2rem;
+    margin-top: .5rem;
 }
 
 .form-btn{
     text-align: center;
-    border-radius: 20px;
+    border-radius: var(--border-radius-block);
     font-size: 1.2rem;
     font-weight: 600;
     padding: .8rem 0;
@@ -141,14 +151,14 @@ header p {
 
 .form-btn:hover:enabled{
 background-color: var(--background-color);
-border-radius: 20px;
+ border-radius: var(--border-radius-block) ;
 color: var(--text-color);
 border: 2px solid var(--accent);
 
 }
 .form-btn:active:enabled{
     background-color: var(--background-color);
-    border-radius: 20px;
+    border-radius: var(--border-radius-block) ;
     color: var(--text-color);
     border: 2px solid var(--accent);
     
@@ -159,16 +169,18 @@ border: 2px solid var(--accent);
 
 
 .result-wrapper{
+    display: block;
     box-sizing: border-box;
-
-    margin: 2rem auto;
-    text-align: left;
-    border-radius: 20px;
+    max-width: 1024px;
+    min-width: 300px;
+    margin:  0 auto;
+    text-align: center;
+    border-radius: var(--border-radius-block);
     padding: 1rem;
     border: 2px solid var(--text-color);
-    max-width: 1024px;
 }
 .result-wrapper p{
+    width: 100%;
     font-size: 1rem;
     font-weight: 600;
     color: var(--sub-text-color);
@@ -185,16 +197,52 @@ border: 2px solid var(--accent);
 
 
 /* ########################################### */
+/* ##                  MAIN                 ## */
+/* ########################################### */
+main{
+    display: flex;
+    max-width: 1020px;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-content: center;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+section{
+    align-self: flex-start;
+    margin: 0 auto;
+
+
+}
+
+section > img{
+    width: 100%;
+    overflow: auto;
+
+}
+
+/* ########################################### */
+/* ##                END MAIN               ## */
+/* ########################################### */
+
+
+/* ------------------------------------------------------------------------------------------ */
+
+
+/* ########################################### */
 /* ##                Footer               ## */
 /* ########################################### */
 
+
 footer{
-    /* position: absolute;
-    bottom: 0%; */
-    margin-top: 4rem;
+    border-top: 3px dotted var(--accent);
+    position: absolute;
+    bottom: 0%;
+    margin-top: 1rem;
     text-align: center;
     width: 100%;
     font-size: 1.2rem;
+    background-color: var(--background-color);
 }
 
 footer a{
@@ -211,9 +259,28 @@ footer a:hover{
     
 }
 
+@media screen and (max-height:650px){
+    footer{
+        position: static;
+    }
+}
+@media screen and (max-width:824px){
+    footer{
+        position: static;
+    }
+}
+
 /* ########################################### */
 /* ##              END Footer               ## */
 /* ########################################### */
 
 
 /* ------------------------------------------------------------------------------------------ */
+
+/* 
+1 - Dividir la páginas en dos secciones de forma horizontal (deben estar lado a lado);
+2 - Insertar campo de texto para el usuário escribir su mensaje en la primera sección;
+3 - Incluir la información de que solo se aceptarán letras minúsculas y no se aceptarán caracteres especiales.
+
+4 - No olvides incluir la imagen en el campo de cifrado/descifrado y el logotipo. 
+*/
